@@ -143,14 +143,6 @@ TerraSight evaluates 3D scene reconstruction performance across standardized dat
 
 ---
 
-## 🔒 Security & Privacy
-
-* **Zero Hardcoded Secrets**: All API endpoints and tokens are configurable via environment variables (`NEXT_PUBLIC_API_URL`, `HF_TOKEN`).
-* **Ephemeral Processing**: User sessions and uploaded photos are kept strictly in-memory during inference without persistent third-party telemetry.
-* **Clean Codebase**: Sanitized of private credentials, keys, and internal experiment logs.
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License.
