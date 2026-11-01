@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vis-Sam-3D Suite — Visual Setup & Architecture Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090e;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.35);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --success: #34d399;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: radial-gradient(circle at 50% 0%, #0f172a 0%, var(--bg) 70%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 720px;
+    }
+    .diagram-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .diagram-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      position: relative;
+    }
+    .step-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .step-box .num {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #07090e;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+    .step-box h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .step-box p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .code-block {
+      background: #0b0f19;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      color: #38bdf8;
+    }
+    .quickstart-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .qs-step {
+      display: flex;
+      gap: 1.25rem;
+    }
+    .qs-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: var(--accent);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .qs-content h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .qs-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .diagram-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Production Architecture</div>
+      <h1>Vis-Sam-3D Suite Setup Guide</h1>
+      <p class="lead">Interactive object segmentation & dual-stage 3D reconstruction pipeline connected to free Kaggle Dual-GPU acceleration.</p>
+    </header>
+
+    <div class="diagram-card">
+      <h2 style="font-size: 1.3rem; margin-bottom: 1.25rem;">Workflow Pipeline Architecture</h2>
+      <div class="diagram-grid">
+        <div class="step-box">
+          <div class="num">1</div>
+          <h3>Upload Image</h3>
+          <p>Drop in any object photograph, webcam capture, or choose from the 16 pre-reconstructed daily objects library.</p>
+        </div>
+        <div class="step-box">
+          <div class="num">2</div>
+          <h3>Segment / Masking</h3>
+          <p>Interactive Canvas with green (+ Point), red (- Point), Box bounds, precision brush, or 1-click AI Auto-Segmentation.</p>
+        </div>
+        <div class="step-box">
+          <div class="num">3</div>
+          <h3>3D Studio & Export</h3>
+          <p>Dual-stage diffusion, watertight marching cubes, and 3D Gaussian Splats rendered interactively in Three.js with GLB download.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="diagram-card">
+      <h2 style="font-size: 1.3rem; margin-bottom: 1.25rem;">Quick Start in 3 Easy Steps</h2>
+      <div class="quickstart-steps">
+        <div class="qs-step">
+          <div class="qs-num">1</div>
+          <div class="qs-content">
+            <h4>Start the Kaggle Free Dual-GPU Notebook</h4>
+            <p>Open <a href="https://www.kaggle.com" target="_blank" style="color:var(--accent);">Kaggle.com</a>, create a notebook, select <strong>GPU T4 x 2</strong> in the accelerator settings, upload <code>kaggle_notebook/SAM_3D_Suite_Kaggle_GPU.ipynb</code> and click <strong>Run All</strong>.</p>
+            <p>Copy the public Cloudflare Tunnel URL printed at Cell 5 (<code>https://...trycloudflare.com</code>).</p>
+          </div>
+        </div>
+
+        <div class="qs-step">
+          <div class="qs-num">2</div>
+          <div class="qs-content">
+            <h4>Launch Local Web Studio</h4>
+            <p>Double-click <code>start.bat</code> (Windows) or execute <code>./start.sh</code> (macOS/Linux) in the project folder.</p>
+            <div class="code-block">
+              cd frontend<br>
+              npm install<br>
+              npm run dev
+            </div>
+            <p style="margin-top: 0.5rem;">Opens automatically at <a href="http://localhost:3000" target="_blank" style="color:var(--accent);">http://localhost:3000</a>.</p>
+          </div>
+        </div>
+
+        <div class="qs-step">
+          <div class="qs-num">3</div>
+          <div class="qs-content">
+            <h4>Connect & Reconstruct</h4>
+            <p>In the top right header, click <strong>Connect Kaggle GPU</strong> and paste your Cloudflare Tunnel URL. Upload your photo, click <strong>✨ Auto-Segment</strong>, and hit <strong>🚀 Generate 3D Model</strong>!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vis-Sam-3D Suite — Server Hardware & Reconstruction Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #121722;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent-gpu: #00e676;
+      --accent-cpu: #29b6f6;
+      --accent-ram: #b388ff;
+      --terminal-bg: #05070c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #00e5ff 0%, #7c4dff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      color: #000;
+    }
+    .brand-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .endpoint-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(0, 230, 118, 0.08);
+      border: 1px solid rgba(0, 230, 118, 0.25);
+      border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: #00e676;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00e676;
+      box-shadow: 0 0 8px #00e676;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    /* Metric Cards Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px) {
+      .metrics-grid { grid-template-columns: 1fr; }
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .card-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+    .card-stat {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .chart-container {
+      width: 100%;
+      height: 64px;
+      position: relative;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .card-footer {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Terminal Console */
+    .console-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    .console-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .console-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .bolt-icon {
+      color: #ff9100;
+      font-size: 1.1rem;
+    }
+    .console-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .log-badge {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+    }
+    .console-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .auto-scroll-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text);
+      cursor: pointer;
+      user-select: none;
+    }
+    .auto-scroll-label input[type="checkbox"] {
+      accent-color: #29b6f6;
+      cursor: pointer;
+    }
+    .btn-action {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-action:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+    .terminal-body {
+      background: var(--terminal-bg);
+      padding: 16px 20px;
+      height: 460px;
+      overflow-y: auto;
+      font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace;
+      font-size: 11.8px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .terminal-body::-webkit-scrollbar {
+      width: 8px;
+    }
+    .terminal-body::-webkit-scrollbar-track {
+      background: #05070c;
+    }
+    .terminal-body::-webkit-scrollbar-thumb {
+      background: #21262d;
+      border-radius: 4px;
+    }
+    .terminal-body::-webkit-scrollbar-thumb:hover {
+      background: #30363d;
+    }
+    .log-line {
+      display: block;
+      color: #c9d1d9;
+    }
+    .log-line .log-info { color: #58a6ff; font-weight: 600; }
+    .log-line .log-warn { color: #d29922; font-weight: 600; }
+    .log-line .log-err { color: #f85149; font-weight: 600; }
+    .log-line .log-ok { color: #3fb950; font-weight: 600; }
+    .log-line .log-time { color: #8b949e; }
+    .log-line .log-stage { color: #e3b341; }
+    .log-line .log-pipe { color: #bc8cff; }
+    .log-line .log-recon { color: #00e5ff; font-weight: 600; }
+    .log-line .log-segment { color: #b388ff; font-weight: 600; }
+    .log-line .log-system { color: #58a6ff; font-weight: 600; }
+    .log-line .log-hardware { color: #39c5bb; font-weight: 600; }
+    .log-line .log-progress { color: #ffb74d; font-weight: 700; }
+    .log-line .log-job { color: #ff79c6; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="brand">
+      <div class="brand-icon">3D</div>
+      <div class="brand-title">Meta SAM 3D Objects Production Endpoint</div>
+    </div>
+    <div class="endpoint-pill">
+      <div class="pulse-dot"></div>
+      <span id="endpointUrlText">ONLINE • DUAL GPU BACKEND</span>
+    </div>
+  </div>
+
+  <!-- Hardware Metrics Row -->
+  <div class="metrics-grid">
+    <!-- GPU VRAM -->
+    <div class="metric-card">
+      <div class="card-header">
+        <span class="card-title">DUAL GPU VRAM (MB)</span>
+        <span class="card-stat" id="gpuStat">-- / -- MB</span>
+      </div>
+      <div class="chart-container">
+        <canvas id="gpuChart"></canvas>
+      </div>
+      <div class="card-footer" id="gpuFooter">GPU0: -- MB (0%) | GPU1: -- MB (0%)</div>
+    </div>
+
+    <!-- CPU Utilization -->
+    <div class="metric-card">
+      <div class="card-header">
+        <span class="card-title">HOST CPU UTILIZATION</span>
+        <span class="card-stat" id="cpuStat">--%</span>
+      </div>
+      <div class="chart-container">
+        <canvas id="cpuChart"></canvas>
+      </div>
+      <div class="card-footer">Kaggle Multi-Core Host CPU</div>
+    </div>
+
+    <!-- RAM Usage -->
+    <div class="metric-card">
+      <div class="card-header">
+        <span class="card-title">HOST RAM USAGE</span>
+        <span class="card-stat" id="ramStat">-- / -- GB</span>
+      </div>
+      <div class="chart-container">
+        <canvas id="ramChart"></canvas>
+      </div>
+      <div class="card-footer" id="ramFooter">Host Memory: --% of -- GB</div>
+    </div>
+  </div>
+
+  <!-- Terminal Console -->
+  <div class="console-section">
+    <div class="console-header">
+      <div class="console-title-group">
+        <span class="bolt-icon">⚡</span>
+        <span class="console-title">3D RECONSTRUCTION & PIPELINE EXECUTION LOG</span>
+        <span class="log-badge" id="logBadge">0 lines</span>
+      </div>
+      <div class="console-controls">
+        <label class="auto-scroll-label">
+          <input type="checkbox" id="autoScrollCheck" checked>
+          <span>Auto-scroll</span>
+        </label>
+        <button class="btn-action" onclick="clearLogs()">Clear</button>
+        <button class="btn-action" onclick="copyLogs()">Copy</button>
+      </div>
+    </div>
+    <div class="terminal-body" id="terminal"></div>
+  </div>
+
+  <script>
+    // Live sparkline buffer
+    const MAX_POINTS = 32;
+    const history = {
+      gpu: new Array(MAX_POINTS).fill(0),
+      cpu: new Array(MAX_POINTS).fill(0),
+      ram: new Array(MAX_POINTS).fill(0),
+    };
+
+    function drawSparkline(canvasId, data, color, fillColor, maxVal = 100) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+      
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+
+      const w = rect.width;
+      const h = rect.height;
+      ctx.clearRect(0, 0, w, h);
+
+      if (data.length < 2) return;
+
+      const pts = data.map((val, i) => {
+        const x = (i / (MAX_POINTS - 1)) * w;
+        const normalized = Math.min(Math.max(val / maxVal, 0), 1);
+        const y = h - (normalized * (h - 8)) - 4;
+        return { x, y };
+      });
+
+      // Area fill
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, h);
+      ctx.lineTo(pts[0].x, pts[0].y);
+      for (let i = 1; i < pts.length; i++) {
+        const xc = (pts[i - 1].x + pts[i].x) / 2;
+        const yc = (pts[i - 1].y + pts[i].y) / 2;
+        ctx.quadraticCurveTo(pts[i - 1].x, pts[i - 1].y, xc, yc);
+      }
+      ctx.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y);
+      ctx.lineTo(pts[pts.length - 1].x, h);
+      ctx.closePath();
+      ctx.fillStyle = fillColor;
+      ctx.fill();
+
+      // Line stroke
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let i = 1; i < pts.length; i++) {
+        const xc = (pts[i - 1].x + pts[i].x) / 2;
+        const yc = (pts[i - 1].y + pts[i].y) / 2;
+        ctx.quadraticCurveTo(pts[i - 1].x, pts[i - 1].y, xc, yc);
+      }
+      ctx.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+
+    let lastLogIndex = 0;
+    const terminal = document.getElementById('terminal');
+    const autoScrollCheck = document.getElementById('autoScrollCheck');
+    const logBadge = document.getElementById('logBadge');
+
+    function highlightLogLine(text) {
+      let escaped = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      
+      // Colorize INFO / WARNING / ERROR / OK / TAGS
+      escaped = escaped.replace(/\bINFO\b/g, '<span class="log-info">INFO</span>');
+      escaped = escaped.replace(/\bWARNING\b/g, '<span class="log-warn">WARNING</span>');
+      escaped = escaped.replace(/\bERROR\b/g, '<span class="log-err">ERROR</span>');
+      escaped = escaped.replace(/\b200 OK\b/g, '<span class="log-ok">200 OK</span>');
+      escaped = escaped.replace(/\[RECON\]/g, '<span class="log-recon">[RECON]</span>');
+      escaped = escaped.replace(/\[SEGMENT\]/g, '<span class="log-segment">[SEGMENT]</span>');
+      escaped = escaped.replace(/\[SYSTEM\]/g, '<span class="log-system">[SYSTEM]</span>');
+      escaped = escaped.replace(/\[HARDWARE\]/g, '<span class="log-hardware">[HARDWARE]</span>');
+      escaped = escaped.replace(/\[PIPELINE\]/g, '<span class="log-ok">[PIPELINE]</span>');
+      escaped = escaped.replace(/(\[\d+%\]|\b\d+%\b)/g, '<span class="log-progress">$1</span>');
+      escaped = escaped.replace(/(\[Job [a-zA-Z0-9_-]+\])/g, '<span class="log-job">$1</span>');
+      escaped = escaped.replace(/(\b\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\b)/g, '<span class="log-time">$1</span>');
+      escaped = escaped.replace(/\b(Stage: [^|]+)/g, '<span class="log-stage">$1</span>');
+      escaped = escaped.replace(/(sam3d_objects\.pipeline[^\s:]*)/g, '<span class="log-pipe">$1</span>');
+      
+      return `<span class="log-line">${escaped}</span>`;
+    }
+
+    async function fetchHardware() {
+      try {
+        const res = await fetch('/api/console/hardware');
+        if (!res.ok) return;
+        const data = await res.json();
+        
+        // GPU
+        document.getElementById('gpuStat').textContent = data.vram_title || `${data.gpu0_mb} / ${data.gpu1_mb} MB`;
+        document.getElementById('gpuFooter').textContent = data.gpu_footer;
+        history.gpu.shift();
+        history.gpu.push(data.gpu0_mb);
+        drawSparkline('gpuChart', history.gpu, '#00e676', 'rgba(0, 230, 118, 0.12)', Math.max(16000, data.gpu0_total_mb || 16000));
+
+        // CPU
+        document.getElementById('cpuStat').textContent = `${data.cpu_pct.toFixed(1)}%`;
+        history.cpu.shift();
+        history.cpu.push(data.cpu_pct);
+        drawSparkline('cpuChart', history.cpu, '#29b6f6', 'rgba(41, 182, 246, 0.12)', 100);
+
+        // RAM
+        document.getElementById('ramStat').textContent = `${data.ram_used_gb} / ${data.ram_total_gb} GB`;
+        document.getElementById('ramFooter').textContent = data.ram_footer;
+        history.ram.shift();
+        history.ram.push(data.ram_used_gb);
+        drawSparkline('ramChart', history.ram, '#b388ff', 'rgba(179, 136, 255, 0.12)', data.ram_total_gb || 32);
+      } catch (e) {
+        console.error("Hardware poll error:", e);
+      }
+    }
+
+    async function fetchLogs() {
+      try {
+        const res = await fetch(`/api/console/logs?offset=${lastLogIndex}`);
+        if (!res.ok) return;
+        const data = await res.json();
+        
+        if (data.logs && data.logs.length > 0) {
+          const fragment = document.createDocumentFragment();
+          data.logs.forEach(line => {
+            const div = document.createElement('div');
+            div.innerHTML = highlightLogLine(line);
+            fragment.appendChild(div);
+          });
+          terminal.appendChild(fragment);
+          lastLogIndex = data.next_offset;
+          
+          logBadge.textContent = `${data.total_lines} lines`;
+          
+          if (autoScrollCheck.checked) {
+            terminal.scrollTop = terminal.scrollHeight;
+          }
+        }
+      } catch (e) {
+        console.error("Logs poll error:", e);
+      }
+    }
+
+    function clearLogs() {
+      terminal.innerHTML = '';
+      logBadge.textContent = '0 lines';
+    }
+
+    function copyLogs() {
+      const text = terminal.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Logs copied to clipboard!");
+      });
+    }
+
+    // Initialize polling
+    fetchHardware();
+    fetchLogs();
+    setInterval(fetchHardware, 1500);
+    setInterval(fetchLogs, 1200);
+
+    // Initial dummy data fill so sparklines display immediately
+    for (let i = 0; i < MAX_POINTS; i++) {
+      history.gpu[i] = 7800 + Math.random() * 200;
+      history.cpu[i] = 20 + Math.random() * 10;
+      history.ram[i] = 13.2 + Math.random() * 0.3;
+    }
+    drawSparkline('gpuChart', history.gpu, '#00e676', 'rgba(0, 230, 118, 0.12)', 16000);
+    drawSparkline('cpuChart', history.cpu, '#29b6f6', 'rgba(41, 182, 246, 0.12)', 100);
+    drawSparkline('ramChart', history.ram, '#b388ff', 'rgba(179, 136, 255, 0.12)', 32);
+  </script>
+</body>
+</html>

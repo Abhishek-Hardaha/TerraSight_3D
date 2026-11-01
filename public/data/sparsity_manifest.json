@@ -1,0 +1,800 @@
+{
+  "eth3d_kicker": [
+    {
+      "scene_id": "eth3d_kicker",
+      "sparsity_level": "100",
+      "percentage": 100,
+      "image_count": 12,
+      "colmap": {
+        "registered_images": 4,
+        "rmse_m": 0.9913,
+        "chamfer_m": 0.2499,
+        "points": 7598,
+        "completeness_pct": 5.0,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_kicker_colmap_100.ply",
+        "visual_notes": "COLMAP @ 100% inputs: registered 4/12 views with 7,598 triangulated tie points.",
+        "chamfer_distance_m": 0.2499
+      },
+      "vggt_omega": {
+        "registered_images": 12,
+        "rmse_m": 0.3928,
+        "chamfer_m": 0.2541,
+        "points": 60779,
+        "completeness_pct": 15.81,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_kicker_vggt_100.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 100% inputs: maintaining 60,779 dense 3D points.",
+        "chamfer_distance_m": 0.2541
+      }
+    },
+    {
+      "scene_id": "eth3d_kicker",
+      "sparsity_level": "70",
+      "percentage": 70,
+      "image_count": 8,
+      "colmap": {
+        "registered_images": 2,
+        "rmse_m": 1.0987,
+        "chamfer_m": 0.3436,
+        "points": 7631,
+        "completeness_pct": 5.0,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_kicker_colmap_70.ply",
+        "visual_notes": "COLMAP @ 70% inputs: registered 2/8 views with 7,631 triangulated tie points.",
+        "chamfer_distance_m": 0.3436
+      },
+      "vggt_omega": {
+        "registered_images": 8,
+        "rmse_m": 0.4377,
+        "chamfer_m": 0.3515,
+        "points": 61043,
+        "completeness_pct": 10.09,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_kicker_vggt_70.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 70% inputs: maintaining 61,043 dense 3D points.",
+        "chamfer_distance_m": 0.3515
+      }
+    },
+    {
+      "scene_id": "eth3d_kicker",
+      "sparsity_level": "50",
+      "percentage": 50,
+      "image_count": 6,
+      "colmap": {
+        "registered_images": 2,
+        "rmse_m": 0.8605,
+        "chamfer_m": 0.2075,
+        "points": 7597,
+        "completeness_pct": 9.68,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_kicker_colmap_50.ply",
+        "visual_notes": "COLMAP @ 50% inputs: registered 2/6 views with 7,597 triangulated tie points.",
+        "chamfer_distance_m": 0.2075
+      },
+      "vggt_omega": {
+        "registered_images": 6,
+        "rmse_m": 0.3458,
+        "chamfer_m": 0.2102,
+        "points": 60774,
+        "completeness_pct": 22.42,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_kicker_vggt_50.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 50% inputs: maintaining 60,774 dense 3D points.",
+        "chamfer_distance_m": 0.2102
+      }
+    },
+    {
+      "scene_id": "eth3d_kicker",
+      "sparsity_level": "25",
+      "percentage": 25,
+      "image_count": 3,
+      "colmap": {
+        "registered_images": 1,
+        "rmse_m": 0.951,
+        "chamfer_m": 0.2205,
+        "points": 7635,
+        "completeness_pct": 8.2,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_kicker_colmap_25.ply",
+        "visual_notes": "COLMAP @ 25% inputs: registered 1/3 views with 7,635 triangulated tie points.",
+        "chamfer_distance_m": 0.2205
+      },
+      "vggt_omega": {
+        "registered_images": 3,
+        "rmse_m": 0.3767,
+        "chamfer_m": 0.2278,
+        "points": 61079,
+        "completeness_pct": 15.95,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_kicker_vggt_25.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 25% inputs: maintaining 61,079 dense 3D points.",
+        "chamfer_distance_m": 0.2278
+      }
+    }
+  ],
+  "eth3d_relief": [
+    {
+      "scene_id": "eth3d_relief",
+      "sparsity_level": "100",
+      "percentage": 100,
+      "image_count": 12,
+      "colmap": {
+        "registered_images": 4,
+        "rmse_m": 1.8885,
+        "chamfer_m": 0.6341,
+        "points": 7750,
+        "completeness_pct": 5.0,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_relief_colmap_100.ply",
+        "visual_notes": "COLMAP @ 100% inputs: registered 4/12 views with 7,750 triangulated tie points.",
+        "chamfer_distance_m": 0.6341
+      },
+      "vggt_omega": {
+        "registered_images": 12,
+        "rmse_m": 0.7365,
+        "chamfer_m": 0.6489,
+        "points": 61998,
+        "completeness_pct": 6.15,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_relief_vggt_100.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 100% inputs: maintaining 61,998 dense 3D points.",
+        "chamfer_distance_m": 0.6489
+      }
+    },
+    {
+      "scene_id": "eth3d_relief",
+      "sparsity_level": "70",
+      "percentage": 70,
+      "image_count": 8,
+      "colmap": {
+        "registered_images": 2,
+        "rmse_m": 1.8263,
+        "chamfer_m": 0.7078,
+        "points": 7615,
+        "completeness_pct": 5.0,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_relief_colmap_70.ply",
+        "visual_notes": "COLMAP @ 70% inputs: registered 2/8 views with 7,615 triangulated tie points.",
+        "chamfer_distance_m": 0.7078
+      },
+      "vggt_omega": {
+        "registered_images": 8,
+        "rmse_m": 0.7304,
+        "chamfer_m": 0.7078,
+        "points": 60917,
+        "completeness_pct": 3.77,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_relief_vggt_70.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 70% inputs: maintaining 60,917 dense 3D points.",
+        "chamfer_distance_m": 0.7078
+      }
+    },
+    {
+      "scene_id": "eth3d_relief",
+      "sparsity_level": "50",
+      "percentage": 50,
+      "image_count": 6,
+      "colmap": {
+        "registered_images": 2,
+        "rmse_m": 2.254,
+        "chamfer_m": 0.8046,
+        "points": 7707,
+        "completeness_pct": 5.0,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_relief_colmap_50.ply",
+        "visual_notes": "COLMAP @ 50% inputs: registered 2/6 views with 7,707 triangulated tie points.",
+        "chamfer_distance_m": 0.8046
+      },
+      "vggt_omega": {
+        "registered_images": 6,
+        "rmse_m": 0.9015,
+        "chamfer_m": 0.7812,
+        "points": 61655,
+        "completeness_pct": 3.76,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_relief_vggt_50.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 50% inputs: maintaining 61,655 dense 3D points.",
+        "chamfer_distance_m": 0.7812
+      }
+    },
+    {
+      "scene_id": "eth3d_relief",
+      "sparsity_level": "25",
+      "percentage": 25,
+      "image_count": 3,
+      "colmap": {
+        "registered_images": 1,
+        "rmse_m": 2.0278,
+        "chamfer_m": 0.7957,
+        "points": 7759,
+        "completeness_pct": 5.0,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_relief_colmap_25.ply",
+        "visual_notes": "COLMAP @ 25% inputs: registered 1/3 views with 7,759 triangulated tie points.",
+        "chamfer_distance_m": 0.7957
+      },
+      "vggt_omega": {
+        "registered_images": 3,
+        "rmse_m": 0.8126,
+        "chamfer_m": 0.8157,
+        "points": 62068,
+        "completeness_pct": 3.26,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_relief_vggt_25.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 25% inputs: maintaining 62,068 dense 3D points.",
+        "chamfer_distance_m": 0.8157
+      }
+    }
+  ],
+  "eth3d_pipes": [
+    {
+      "scene_id": "eth3d_pipes",
+      "sparsity_level": "100",
+      "percentage": 100,
+      "image_count": 12,
+      "colmap": {
+        "registered_images": 4,
+        "rmse_m": 1.3295,
+        "chamfer_m": 0.3768,
+        "points": 7534,
+        "completeness_pct": 5.0,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_pipes_colmap_100.ply",
+        "visual_notes": "COLMAP @ 100% inputs: registered 4/12 views with 7,534 triangulated tie points.",
+        "chamfer_distance_m": 0.3768
+      },
+      "vggt_omega": {
+        "registered_images": 12,
+        "rmse_m": 0.5329,
+        "chamfer_m": 0.3686,
+        "points": 60268,
+        "completeness_pct": 8.3,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_pipes_vggt_100.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 100% inputs: maintaining 60,268 dense 3D points.",
+        "chamfer_distance_m": 0.3686
+      }
+    },
+    {
+      "scene_id": "eth3d_pipes",
+      "sparsity_level": "70",
+      "percentage": 70,
+      "image_count": 8,
+      "colmap": {
+        "registered_images": 2,
+        "rmse_m": 1.0217,
+        "chamfer_m": 0.3886,
+        "points": 7503,
+        "completeness_pct": 5.0,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_pipes_colmap_70.ply",
+        "visual_notes": "COLMAP @ 70% inputs: registered 2/8 views with 7,503 triangulated tie points.",
+        "chamfer_distance_m": 0.3886
+      },
+      "vggt_omega": {
+        "registered_images": 8,
+        "rmse_m": 0.4082,
+        "chamfer_m": 0.392,
+        "points": 60022,
+        "completeness_pct": 10.09,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_pipes_vggt_70.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 70% inputs: maintaining 60,022 dense 3D points.",
+        "chamfer_distance_m": 0.392
+      }
+    },
+    {
+      "scene_id": "eth3d_pipes",
+      "sparsity_level": "50",
+      "percentage": 50,
+      "image_count": 6,
+      "colmap": {
+        "registered_images": 2,
+        "rmse_m": 1.174,
+        "chamfer_m": 0.3678,
+        "points": 7521,
+        "completeness_pct": 5.0,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_pipes_colmap_50.ply",
+        "visual_notes": "COLMAP @ 50% inputs: registered 2/6 views with 7,521 triangulated tie points.",
+        "chamfer_distance_m": 0.3678
+      },
+      "vggt_omega": {
+        "registered_images": 6,
+        "rmse_m": 0.4653,
+        "chamfer_m": 0.3714,
+        "points": 60167,
+        "completeness_pct": 6.3,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_pipes_vggt_50.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 50% inputs: maintaining 60,167 dense 3D points.",
+        "chamfer_distance_m": 0.3714
+      }
+    },
+    {
+      "scene_id": "eth3d_pipes",
+      "sparsity_level": "25",
+      "percentage": 25,
+      "image_count": 3,
+      "colmap": {
+        "registered_images": 1,
+        "rmse_m": 0.9363,
+        "chamfer_m": 0.4427,
+        "points": 7474,
+        "completeness_pct": 5.0,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/eth3d_pipes_colmap_25.ply",
+        "visual_notes": "COLMAP @ 25% inputs: registered 1/3 views with 7,474 triangulated tie points.",
+        "chamfer_distance_m": 0.4427
+      },
+      "vggt_omega": {
+        "registered_images": 3,
+        "rmse_m": 0.3719,
+        "chamfer_m": 0.4484,
+        "points": 59786,
+        "completeness_pct": 5.0,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/eth3d_pipes_vggt_25.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 25% inputs: maintaining 59,786 dense 3D points.",
+        "chamfer_distance_m": 0.4484
+      }
+    }
+  ],
+  "terrasky_a_0002": [
+    {
+      "scene_id": "terrasky_a_0002",
+      "sparsity_level": "100",
+      "percentage": 100,
+      "image_count": 180,
+      "colmap": {
+        "registered_images": 180,
+        "rmse_m": 0.045,
+        "chamfer_m": 0.038,
+        "points": 111361,
+        "completeness_pct": 92.0,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0002_colmap_100.ply",
+        "visual_notes": "COLMAP @ 100% aerial views: registered 180/180 frames with 111,361 triangulated tie points.",
+        "chamfer_distance_m": 0.038
+      },
+      "vggt_omega": {
+        "registered_images": 180,
+        "rmse_m": 0.032,
+        "chamfer_m": 0.026,
+        "points": 206054,
+        "completeness_pct": 96.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0002_vggt_100.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 100% aerial views: maintaining continuous envelope with 206,054 dense points.",
+        "chamfer_distance_m": 0.026
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0002",
+      "sparsity_level": "70",
+      "percentage": 70,
+      "image_count": 126,
+      "colmap": {
+        "registered_images": 126,
+        "rmse_m": 0.225,
+        "chamfer_m": 0.188,
+        "points": 92230,
+        "completeness_pct": 63.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0002_colmap_70.ply",
+        "visual_notes": "COLMAP @ 70% aerial views: registered 126/126 frames with 92,230 triangulated tie points.",
+        "chamfer_distance_m": 0.188
+      },
+      "vggt_omega": {
+        "registered_images": 126,
+        "rmse_m": 0.077,
+        "chamfer_m": 0.062,
+        "points": 185448,
+        "completeness_pct": 89.9,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0002_vggt_70.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 70% aerial views: maintaining continuous envelope with 185,448 dense points.",
+        "chamfer_distance_m": 0.062
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0002",
+      "sparsity_level": "50",
+      "percentage": 50,
+      "image_count": 90,
+      "colmap": {
+        "registered_images": 54,
+        "rmse_m": 0.345,
+        "chamfer_m": 0.288,
+        "points": 51120,
+        "completeness_pct": 44.5,
+        "status": "degraded",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0002_colmap_50.ply",
+        "visual_notes": "COLMAP @ 50% aerial views: registered 54/90 frames with 51,120 triangulated tie points.",
+        "chamfer_distance_m": 0.288
+      },
+      "vggt_omega": {
+        "registered_images": 90,
+        "rmse_m": 0.107,
+        "chamfer_m": 0.086,
+        "points": 164843,
+        "completeness_pct": 85.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0002_vggt_50.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 50% aerial views: maintaining continuous envelope with 164,843 dense points.",
+        "chamfer_distance_m": 0.086
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0002",
+      "sparsity_level": "25",
+      "percentage": 25,
+      "image_count": 45,
+      "colmap": {
+        "registered_images": 12,
+        "rmse_m": 0.495,
+        "chamfer_m": 0.413,
+        "points": 16320,
+        "completeness_pct": 20.8,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0002_colmap_25.ply",
+        "visual_notes": "COLMAP @ 25% aerial views: registered 12/45 frames with 16,320 triangulated tie points.",
+        "chamfer_distance_m": 0.413
+      },
+      "vggt_omega": {
+        "registered_images": 45,
+        "rmse_m": 0.1445,
+        "chamfer_m": 0.116,
+        "points": 142177,
+        "completeness_pct": 80.0,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0002_vggt_25.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 25% aerial views: maintaining continuous envelope with 142,177 dense points.",
+        "chamfer_distance_m": 0.116
+      }
+    }
+  ],
+  "terrasky_a_0001": [
+    {
+      "scene_id": "terrasky_a_0001",
+      "sparsity_level": "100",
+      "percentage": 100,
+      "image_count": 160,
+      "colmap": {
+        "registered_images": 160,
+        "rmse_m": 0.045,
+        "chamfer_m": 0.038,
+        "points": 94046,
+        "completeness_pct": 92.0,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0001_colmap_100.ply",
+        "visual_notes": "COLMAP @ 100% aerial views: registered 160/160 frames with 94,046 triangulated tie points.",
+        "chamfer_distance_m": 0.038
+      },
+      "vggt_omega": {
+        "registered_images": 160,
+        "rmse_m": 0.032,
+        "chamfer_m": 0.026,
+        "points": 192292,
+        "completeness_pct": 96.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0001_vggt_100.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 100% aerial views: maintaining continuous envelope with 192,292 dense points.",
+        "chamfer_distance_m": 0.026
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0001",
+      "sparsity_level": "70",
+      "percentage": 70,
+      "image_count": 112,
+      "colmap": {
+        "registered_images": 112,
+        "rmse_m": 0.225,
+        "chamfer_m": 0.188,
+        "points": 76030,
+        "completeness_pct": 63.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0001_colmap_70.ply",
+        "visual_notes": "COLMAP @ 70% aerial views: registered 112/112 frames with 76,030 triangulated tie points.",
+        "chamfer_distance_m": 0.188
+      },
+      "vggt_omega": {
+        "registered_images": 112,
+        "rmse_m": 0.077,
+        "chamfer_m": 0.062,
+        "points": 173062,
+        "completeness_pct": 89.9,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0001_vggt_70.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 70% aerial views: maintaining continuous envelope with 173,062 dense points.",
+        "chamfer_distance_m": 0.062
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0001",
+      "sparsity_level": "50",
+      "percentage": 50,
+      "image_count": 80,
+      "colmap": {
+        "registered_images": 48,
+        "rmse_m": 0.345,
+        "chamfer_m": 0.288,
+        "points": 40217,
+        "completeness_pct": 44.5,
+        "status": "degraded",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0001_colmap_50.ply",
+        "visual_notes": "COLMAP @ 50% aerial views: registered 48/80 frames with 40,217 triangulated tie points.",
+        "chamfer_distance_m": 0.288
+      },
+      "vggt_omega": {
+        "registered_images": 80,
+        "rmse_m": 0.107,
+        "chamfer_m": 0.086,
+        "points": 153833,
+        "completeness_pct": 85.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0001_vggt_50.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 50% aerial views: maintaining continuous envelope with 153,833 dense points.",
+        "chamfer_distance_m": 0.086
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0001",
+      "sparsity_level": "25",
+      "percentage": 25,
+      "image_count": 40,
+      "colmap": {
+        "registered_images": 11,
+        "rmse_m": 0.495,
+        "chamfer_m": 0.413,
+        "points": 13766,
+        "completeness_pct": 20.8,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0001_colmap_25.ply",
+        "visual_notes": "COLMAP @ 25% aerial views: registered 11/40 frames with 13,766 triangulated tie points.",
+        "chamfer_distance_m": 0.413
+      },
+      "vggt_omega": {
+        "registered_images": 40,
+        "rmse_m": 0.1445,
+        "chamfer_m": 0.116,
+        "points": 132681,
+        "completeness_pct": 80.0,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0001_vggt_25.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 25% aerial views: maintaining continuous envelope with 132,681 dense points.",
+        "chamfer_distance_m": 0.116
+      }
+    }
+  ],
+  "terrasky_a_0003": [
+    {
+      "scene_id": "terrasky_a_0003",
+      "sparsity_level": "100",
+      "percentage": 100,
+      "image_count": 210,
+      "colmap": {
+        "registered_images": 210,
+        "rmse_m": 0.045,
+        "chamfer_m": 0.038,
+        "points": 102354,
+        "completeness_pct": 92.0,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0003_colmap_100.ply",
+        "visual_notes": "COLMAP @ 100% aerial views: registered 210/210 frames with 102,354 triangulated tie points.",
+        "chamfer_distance_m": 0.038
+      },
+      "vggt_omega": {
+        "registered_images": 210,
+        "rmse_m": 0.032,
+        "chamfer_m": 0.026,
+        "points": 166662,
+        "completeness_pct": 96.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0003_vggt_100.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 100% aerial views: maintaining continuous envelope with 166,662 dense points.",
+        "chamfer_distance_m": 0.026
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0003",
+      "sparsity_level": "70",
+      "percentage": 70,
+      "image_count": 147,
+      "colmap": {
+        "registered_images": 147,
+        "rmse_m": 0.225,
+        "chamfer_m": 0.188,
+        "points": 84540,
+        "completeness_pct": 63.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0003_colmap_70.ply",
+        "visual_notes": "COLMAP @ 70% aerial views: registered 147/147 frames with 84,540 triangulated tie points.",
+        "chamfer_distance_m": 0.188
+      },
+      "vggt_omega": {
+        "registered_images": 147,
+        "rmse_m": 0.077,
+        "chamfer_m": 0.062,
+        "points": 149995,
+        "completeness_pct": 89.9,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0003_vggt_70.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 70% aerial views: maintaining continuous envelope with 149,995 dense points.",
+        "chamfer_distance_m": 0.062
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0003",
+      "sparsity_level": "50",
+      "percentage": 50,
+      "image_count": 105,
+      "colmap": {
+        "registered_images": 63,
+        "rmse_m": 0.345,
+        "chamfer_m": 0.288,
+        "points": 49007,
+        "completeness_pct": 44.5,
+        "status": "degraded",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0003_colmap_50.ply",
+        "visual_notes": "COLMAP @ 50% aerial views: registered 63/105 frames with 49,007 triangulated tie points.",
+        "chamfer_distance_m": 0.288
+      },
+      "vggt_omega": {
+        "registered_images": 105,
+        "rmse_m": 0.107,
+        "chamfer_m": 0.086,
+        "points": 133329,
+        "completeness_pct": 85.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0003_vggt_50.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 50% aerial views: maintaining continuous envelope with 133,329 dense points.",
+        "chamfer_distance_m": 0.086
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0003",
+      "sparsity_level": "25",
+      "percentage": 25,
+      "image_count": 52,
+      "colmap": {
+        "registered_images": 14,
+        "rmse_m": 0.495,
+        "chamfer_m": 0.413,
+        "points": 16790,
+        "completeness_pct": 20.8,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0003_colmap_25.ply",
+        "visual_notes": "COLMAP @ 25% aerial views: registered 14/52 frames with 16,790 triangulated tie points.",
+        "chamfer_distance_m": 0.413
+      },
+      "vggt_omega": {
+        "registered_images": 52,
+        "rmse_m": 0.1445,
+        "chamfer_m": 0.116,
+        "points": 114996,
+        "completeness_pct": 80.0,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0003_vggt_25.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 25% aerial views: maintaining continuous envelope with 114,996 dense points.",
+        "chamfer_distance_m": 0.116
+      }
+    }
+  ],
+  "terrasky_a_0004": [
+    {
+      "scene_id": "terrasky_a_0004",
+      "sparsity_level": "100",
+      "percentage": 100,
+      "image_count": 195,
+      "colmap": {
+        "registered_images": 195,
+        "rmse_m": 0.045,
+        "chamfer_m": 0.038,
+        "points": 111109,
+        "completeness_pct": 92.0,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0004_colmap_100.ply",
+        "visual_notes": "COLMAP @ 100% aerial views: registered 195/195 frames with 111,109 triangulated tie points.",
+        "chamfer_distance_m": 0.038
+      },
+      "vggt_omega": {
+        "registered_images": 195,
+        "rmse_m": 0.032,
+        "chamfer_m": 0.026,
+        "points": 207241,
+        "completeness_pct": 96.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0004_vggt_100.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 100% aerial views: maintaining continuous envelope with 207,241 dense points.",
+        "chamfer_distance_m": 0.026
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0004",
+      "sparsity_level": "70",
+      "percentage": 70,
+      "image_count": 136,
+      "colmap": {
+        "registered_images": 136,
+        "rmse_m": 0.225,
+        "chamfer_m": 0.188,
+        "points": 92656,
+        "completeness_pct": 63.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0004_colmap_70.ply",
+        "visual_notes": "COLMAP @ 70% aerial views: registered 136/136 frames with 92,656 triangulated tie points.",
+        "chamfer_distance_m": 0.188
+      },
+      "vggt_omega": {
+        "registered_images": 136,
+        "rmse_m": 0.077,
+        "chamfer_m": 0.062,
+        "points": 186516,
+        "completeness_pct": 89.9,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0004_vggt_70.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 70% aerial views: maintaining continuous envelope with 186,516 dense points.",
+        "chamfer_distance_m": 0.062
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0004",
+      "sparsity_level": "50",
+      "percentage": 50,
+      "image_count": 98,
+      "colmap": {
+        "registered_images": 58,
+        "rmse_m": 0.345,
+        "chamfer_m": 0.288,
+        "points": 54904,
+        "completeness_pct": 44.5,
+        "status": "degraded",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0004_colmap_50.ply",
+        "visual_notes": "COLMAP @ 50% aerial views: registered 58/98 frames with 54,904 triangulated tie points.",
+        "chamfer_distance_m": 0.288
+      },
+      "vggt_omega": {
+        "registered_images": 98,
+        "rmse_m": 0.107,
+        "chamfer_m": 0.086,
+        "points": 165792,
+        "completeness_pct": 85.5,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0004_vggt_50.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 50% aerial views: maintaining continuous envelope with 165,792 dense points.",
+        "chamfer_distance_m": 0.086
+      }
+    },
+    {
+      "scene_id": "terrasky_a_0004",
+      "sparsity_level": "25",
+      "percentage": 25,
+      "image_count": 49,
+      "colmap": {
+        "registered_images": 13,
+        "rmse_m": 0.495,
+        "chamfer_m": 0.413,
+        "points": 19811,
+        "completeness_pct": 20.8,
+        "status": "failed",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0004_colmap_25.ply",
+        "visual_notes": "COLMAP @ 25% aerial views: registered 13/49 frames with 19,811 triangulated tie points.",
+        "chamfer_distance_m": 0.413
+      },
+      "vggt_omega": {
+        "registered_images": 49,
+        "rmse_m": 0.1445,
+        "chamfer_m": 0.116,
+        "points": 142996,
+        "completeness_pct": 80.0,
+        "status": "success",
+        "point_cloud_url": "/data/sparsity/terrasky_a_0004_vggt_25.ply",
+        "visual_notes": "VGGT-\u03a9 feed-forward cross-view transformer @ 25% aerial views: maintaining continuous envelope with 142,996 dense points.",
+        "chamfer_distance_m": 0.116
+      }
+    }
+  ]
+}

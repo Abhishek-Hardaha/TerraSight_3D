@@ -1,0 +1,337 @@
+{
+  "eth3d_electro": {
+    "ground_truth": {
+      "metrics": {
+        "rmse_m": 0.0,
+        "chamfer_distance_m": 0.0,
+        "mae_m": 0.0,
+        "accuracy_cm": 0.0,
+        "completeness_pct": 100.0,
+        "f_score": 1.0,
+        "point_count": 80000,
+        "inference_time_s": 0.0,
+        "scale_aligned": true
+      }
+    },
+    "vggt_omega": {
+      "metrics": {
+        "rmse_m": 1.2585,
+        "chamfer_distance_m": 0.997,
+        "mae_m": 0.7267,
+        "accuracy_cm": 1.6,
+        "completeness_pct": 1.28,
+        "f_score": 0.0142,
+        "point_count": 60227,
+        "scale_aligned": true,
+        "inference_time_s": 5.17
+      }
+    },
+    "dust3r": {
+      "metrics": {
+        "rmse_m": 1.6116,
+        "chamfer_distance_m": 1.1524,
+        "mae_m": 0.9651,
+        "accuracy_cm": 1.2,
+        "completeness_pct": 0.8,
+        "f_score": 0.0096,
+        "point_count": 55243,
+        "scale_aligned": true,
+        "inference_time_s": 12.84
+      }
+    },
+    "depth_anything_3": {
+      "metrics": {
+        "rmse_m": 1.2391,
+        "chamfer_distance_m": 1.26,
+        "mae_m": 0.9841,
+        "accuracy_cm": 0.92,
+        "completeness_pct": 0.8,
+        "f_score": 0.0086,
+        "point_count": 56132,
+        "scale_aligned": true,
+        "inference_time_s": 3.8
+      }
+    },
+    "colmap_sfm": {
+      "metrics": {
+        "rmse_m": 2.1564,
+        "chamfer_distance_m": 1.44,
+        "mae_m": 2.0734,
+        "accuracy_cm": 0.01,
+        "completeness_pct": 0.07,
+        "f_score": 0.0002,
+        "point_count": 20076,
+        "scale_aligned": true,
+        "inference_time_s": 1.39
+      }
+    }
+  },
+  "eth3d_playground": {
+    "ground_truth": {
+      "metrics": {
+        "rmse_m": 0.0,
+        "chamfer_distance_m": 0.0,
+        "mae_m": 0.0,
+        "accuracy_cm": 0.0,
+        "completeness_pct": 100.0,
+        "f_score": 1.0,
+        "point_count": 80000,
+        "inference_time_s": 0.0,
+        "scale_aligned": true
+      }
+    },
+    "vggt_omega": {
+      "metrics": {
+        "rmse_m": 1.3359,
+        "chamfer_distance_m": 0.9143,
+        "mae_m": 0.746,
+        "accuracy_cm": 3.52,
+        "completeness_pct": 5.35,
+        "f_score": 0.0425,
+        "point_count": 60788,
+        "scale_aligned": true,
+        "inference_time_s": 3.93
+      }
+    },
+    "dust3r": {
+      "metrics": {
+        "rmse_m": 0.6626,
+        "chamfer_distance_m": 0.7988,
+        "mae_m": 0.4437,
+        "accuracy_cm": 6.14,
+        "completeness_pct": 3.4,
+        "f_score": 0.0438,
+        "point_count": 55411,
+        "scale_aligned": true,
+        "inference_time_s": 12.17
+      }
+    },
+    "depth_anything_3": {
+      "metrics": {
+        "rmse_m": 0.5646,
+        "chamfer_distance_m": 0.6924,
+        "mae_m": 0.4221,
+        "accuracy_cm": 4.47,
+        "completeness_pct": 5.83,
+        "f_score": 0.0506,
+        "point_count": 55991,
+        "scale_aligned": true,
+        "inference_time_s": 3.75
+      }
+    },
+    "colmap_sfm": {
+      "metrics": {
+        "rmse_m": 1.0529,
+        "chamfer_distance_m": 0.8062,
+        "mae_m": 0.8003,
+        "accuracy_cm": 1.45,
+        "completeness_pct": 3.79,
+        "f_score": 0.021,
+        "point_count": 20263,
+        "scale_aligned": true,
+        "inference_time_s": 0.44
+      }
+    }
+  },
+  "eth3d_terrace": {
+    "ground_truth": {
+      "metrics": {
+        "rmse_m": 0.0,
+        "chamfer_distance_m": 0.0,
+        "mae_m": 0.0,
+        "accuracy_cm": 0.0,
+        "completeness_pct": 100.0,
+        "f_score": 1.0,
+        "point_count": 80000,
+        "inference_time_s": 0.0,
+        "scale_aligned": true
+      }
+    },
+    "vggt_omega": {
+      "metrics": {
+        "rmse_m": 0.8073,
+        "chamfer_distance_m": 0.603,
+        "mae_m": 0.4284,
+        "accuracy_cm": 6.48,
+        "completeness_pct": 3.62,
+        "f_score": 0.0464,
+        "point_count": 60497,
+        "scale_aligned": true,
+        "inference_time_s": 3.97
+      }
+    },
+    "dust3r": {
+      "metrics": {
+        "rmse_m": 0.7135,
+        "chamfer_distance_m": 0.5483,
+        "mae_m": 0.435,
+        "accuracy_cm": 10.98,
+        "completeness_pct": 14.04,
+        "f_score": 0.1233,
+        "point_count": 55242,
+        "scale_aligned": true,
+        "inference_time_s": 12.28
+      }
+    },
+    "depth_anything_3": {
+      "metrics": {
+        "rmse_m": 0.6634,
+        "chamfer_distance_m": 0.6593,
+        "mae_m": 0.5019,
+        "accuracy_cm": 4.81,
+        "completeness_pct": 3.89,
+        "f_score": 0.043,
+        "point_count": 55778,
+        "scale_aligned": true,
+        "inference_time_s": 3.76
+      }
+    },
+    "colmap_sfm": {
+      "metrics": {
+        "rmse_m": 1.1613,
+        "chamfer_distance_m": 0.6666,
+        "mae_m": 1.0047,
+        "accuracy_cm": 0.84,
+        "completeness_pct": 5.39,
+        "f_score": 0.0146,
+        "point_count": 20166,
+        "scale_aligned": true,
+        "inference_time_s": 0.44
+      }
+    }
+  },
+  "eth3d_relief_2": {
+    "ground_truth": {
+      "metrics": {
+        "rmse_m": 0.0,
+        "chamfer_distance_m": 0.0,
+        "mae_m": 0.0,
+        "accuracy_cm": 0.0,
+        "completeness_pct": 100.0,
+        "f_score": 1.0,
+        "point_count": 80000,
+        "inference_time_s": 0.0,
+        "scale_aligned": true
+      }
+    },
+    "vggt_omega": {
+      "metrics": {
+        "rmse_m": 0.5175,
+        "chamfer_distance_m": 0.5068,
+        "mae_m": 0.4154,
+        "accuracy_cm": 6.35,
+        "completeness_pct": 5.79,
+        "f_score": 0.0605,
+        "point_count": 61270,
+        "scale_aligned": true,
+        "inference_time_s": 3.93
+      }
+    },
+    "dust3r": {
+      "metrics": {
+        "rmse_m": 0.4912,
+        "chamfer_distance_m": 0.4874,
+        "mae_m": 0.3951,
+        "accuracy_cm": 6.3,
+        "completeness_pct": 6.74,
+        "f_score": 0.0652,
+        "point_count": 56106,
+        "scale_aligned": true,
+        "inference_time_s": 12.33
+      }
+    },
+    "depth_anything_3": {
+      "metrics": {
+        "rmse_m": 0.5473,
+        "chamfer_distance_m": 0.4994,
+        "mae_m": 0.3841,
+        "accuracy_cm": 6.41,
+        "completeness_pct": 8.04,
+        "f_score": 0.0713,
+        "point_count": 55012,
+        "scale_aligned": true,
+        "inference_time_s": 3.73
+      }
+    },
+    "colmap_sfm": {
+      "metrics": {
+        "rmse_m": 0.7986,
+        "chamfer_distance_m": 0.585,
+        "mae_m": 0.7332,
+        "accuracy_cm": 0.01,
+        "completeness_pct": 0.05,
+        "f_score": 0.0001,
+        "point_count": 20424,
+        "scale_aligned": true,
+        "inference_time_s": 0.46
+      }
+    }
+  },
+  "eth3d_pipes": {
+    "ground_truth": {
+      "metrics": {
+        "rmse_m": 0.0,
+        "chamfer_distance_m": 0.0,
+        "mae_m": 0.0,
+        "accuracy_cm": 0.0,
+        "completeness_pct": 100.0,
+        "f_score": 1.0,
+        "point_count": 80000,
+        "inference_time_s": 0.0,
+        "scale_aligned": true
+      }
+    },
+    "vggt_omega": {
+      "metrics": {
+        "rmse_m": 0.5027,
+        "chamfer_distance_m": 0.507,
+        "mae_m": 0.362,
+        "accuracy_cm": 5.27,
+        "completeness_pct": 3.29,
+        "f_score": 0.0405,
+        "point_count": 60613,
+        "scale_aligned": true,
+        "inference_time_s": 3.96
+      }
+    },
+    "dust3r": {
+      "metrics": {
+        "rmse_m": 0.8703,
+        "chamfer_distance_m": 0.579,
+        "mae_m": 0.539,
+        "accuracy_cm": 5.3,
+        "completeness_pct": 6.2,
+        "f_score": 0.0571,
+        "point_count": 55401,
+        "scale_aligned": true,
+        "inference_time_s": 12.3
+      }
+    },
+    "depth_anything_3": {
+      "metrics": {
+        "rmse_m": 0.5137,
+        "chamfer_distance_m": 0.512,
+        "mae_m": 0.4121,
+        "accuracy_cm": 5.68,
+        "completeness_pct": 11.35,
+        "f_score": 0.0757,
+        "point_count": 55355,
+        "scale_aligned": true,
+        "inference_time_s": 3.76
+      }
+    },
+    "colmap_sfm": {
+      "metrics": {
+        "rmse_m": 0.5421,
+        "chamfer_distance_m": 0.4649,
+        "mae_m": 0.4904,
+        "accuracy_cm": 0.03,
+        "completeness_pct": 0.17,
+        "f_score": 0.0006,
+        "point_count": 20205,
+        "scale_aligned": true,
+        "inference_time_s": 0.44
+      }
+    }
+  }
+}
